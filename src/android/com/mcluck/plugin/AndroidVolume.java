@@ -237,6 +237,7 @@ public class AndroidVolume extends CordovaPlugin {
 	}
 
 	private void registerVolumeObserver(CallbackContext callbackContext) {
+		unregisterVolumeObserver(callbackContext);
 		if (volumeObserver == null) {
 			final Context context = cordova.getActivity();
 			volumeObserver = new AndroidVolumeObserver(context, callbackContext);
